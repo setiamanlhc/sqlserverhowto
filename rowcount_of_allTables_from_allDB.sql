@@ -1,3 +1,7 @@
+alter procedure dbo.up_get_LOAT_from_all_DB as
+begin
+--Created by : Setiaman
+--Descr : Get List of All Tables from All DB
 -- create table with only the names of databases that are published
 SELECT 
 name as databasename
@@ -48,3 +52,8 @@ select * from #alltablesizes
 order by 5 desc
 drop table #alltablesizes
 drop table #alldatabases
+end;
+go
+
+grant execute on dbo.up_get_LOAT_from_all_DB to public;
+go
