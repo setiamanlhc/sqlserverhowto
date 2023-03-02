@@ -1,7 +1,16 @@
-alter procedure dbo.up_get_LOAT_from_all_DB as
+use master;
+go
+
+BEGIN
+if exists (select 1 from sys.sysobjects where name='up_get_LOAT_from_all_DB')
+drop procedure dbo.up_get_LOAT_from_all_DB;
+end;
+go
+
+create procedure dbo.up_get_LOAT_from_all_DB as
 begin
 --Created by : Setiaman
---Descr : User Procedrue (UP) Get List of All Tables from All DB
+--Descr : Get List of All Tables from All DB
 -- create table with only the names of databases that are published
 SELECT 
 name as databasename
@@ -56,4 +65,3 @@ end;
 go
 
 grant execute on dbo.up_get_LOAT_from_all_DB to public;
-go
