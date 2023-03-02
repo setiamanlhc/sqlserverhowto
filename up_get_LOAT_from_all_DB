@@ -1,7 +1,7 @@
 alter procedure dbo.up_get_LOAT_from_all_DB as
 begin
 --Created by : Setiaman
---Descr : Get List of All Tables from All DB
+--Descr : User Procedrue (UP) Get List of All Tables from All DB
 -- create table with only the names of databases that are published
 SELECT 
 name as databasename
